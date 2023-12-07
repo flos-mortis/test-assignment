@@ -1,0 +1,13 @@
+$primary-color: rgba(255, 255, 255, 1);
+$accent-color: rgba(118, 255, 106, 1);
+$background-color: rgba(11, 10, 13, 1);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $background-color;
+}
