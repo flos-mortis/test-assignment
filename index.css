@@ -4,6 +4,19 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
   background-color: rgb(11, 10, 13);
+  color: rgb(255, 255, 255);
+}
+
+p {
+  color: rgb(255, 255, 255);
+}
+
+.accordion-item:not(.accordion-item_show) .accordion-body {
+  display: none;
 }/*# sourceMappingURL=index.css.map */
