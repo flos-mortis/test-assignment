@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+.text-heading {
+  font-size: 5rem;
+}
+
+body {
+  font-family: "M PLUS 1p", sans-serif;
+  background-color: rgb(11, 10, 13);
+  color: rgb(255, 255, 255);
+}
+
+p {
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrapper {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 3rem;
+}
+
+.navbar, .navbar-item-submenu {
+  list-style: none;
+  display: flex;
+}
+
+.navbar {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4.6875rem 0;
+}
+
+.navbar-item-submenu:not(.navbar-item-submenu_show) .navbar-item-submenu {
+  display: none;
+}
+
+.splide__slide {
+  position: relative;
+}
+.splide__slide img {
+  width: 100%;
+  max-height: 650px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
+}
+.splide__slide p {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.custom-arrows {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.custom-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.faq {
+  margin-top: 9.375rem;
+  display: flex;
+  gap: 6.25rem;
+}
+.faq p {
+  text-transform: uppercase;
+}
+
+.accordion {
+  width: 100%;
+}
+
+.accordion-item {
+  padding: 1.875rem 0;
+  border: 1px solid rgb(255, 255, 255);
+  border-left: none;
+  border-right: none;
+}
+
+.accordion-header {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.accordion-header + .accordion-body {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.accordion-header.shown + .accordion-body {
+  max-height: 1000px;
+  margin-top: 1.875rem;
+  transition: max-height 0.5s ease;
+}
+
+.news {
+  margin-top: 6.25rem;
+}
+
+.news-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+  width: calc(33% - 10px);
+}
+.news-item img {
+  width: 100%;
+  height: 264px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.news-item__head {
+  margin-top: 1.875rem;
+}
+
+.news-item__text {
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
+}/*# sourceMappingURL=index.css.map */

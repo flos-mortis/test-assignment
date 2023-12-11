@@ -3,118 +3,140 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link  rel="stylesheet" type="text/css" href="index.css"/>
-        <script src="index.js"></script>
         <title>500na700</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+        <link rel="stylesheet" type="text/css" href="./styles/index.css"/>
     </head>
     <body>
-        <header>
-            <img src="./images/logo.svg">
-            <ul class="navbar">
-                <li class="navbar-item">
-                    <p>Пункт 1</p>
-                    <div class="navbar-item-submenu">
-                        <li>Подпункт меню</li>
-                        <li>Подпункт меню</li>
-                        <li>Подпункт меню</li>
-                        <li>Подпункт меню</li>
-                        <li>Подпункт меню</li>
-                    </div>
-                </li>
-                <li class="navbar-item">Пункт 2</li>
-                <li class="navbar-item">Пункт 3</li>
-                <li class="navbar-item">Пункт 4</li>
-                <li class="navbar-item">Пункт 5</li>
-            </ul>
-        </header>
+        <div class="wrapper">
+            <header>
+                <img class="navbar-logo__image" src="./images/logo.svg" alt="500na700">
+                <ul class="navbar">
+                    <li class="navbar-item">
+                        <p>Пункт 1</p>
+                        <ul class="navbar-item-submenu navbar-item-submenu_show">
+                            <li class="submenu-item">Подпункт меню</li>
+                            <li class="submenu-item">Подпункт меню</li>
+                            <li class="submenu-item">Подпункт меню</li>
+                            <li class="submenu-item">Подпункт меню</li>
+                            <li class="submenu-item">Подпункт меню</li>
+                        </ul>
+                    </li> 
+                    <li class="navbar-item">Пункт 2</li>
+                    <li class="navbar-item">Пункт 3</li>
+                    <li class="navbar-item">Пункт 4</li>
+                    <li class="navbar-item">Пункт 5</li>
+                </ul>
+            </header>
+        </div>
         <main>
-            <section class="slider">
-                <div class="slider-images">
-                    <img class="slider__image" src="./images/slider-1.jfif">
-                    <img class="slider__image" src="./images/slider-2.jfif">
-                    <img class="slider__image" src="/images/slider-3.jfif">
+            <section id="image-carousel" class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img src="./images/slider-1.jfif" alt="">
+                            <p class="text-heading">Слайд 1</p>
+                        </li>
+                        <li class="splide__slide">
+                            <img src="./images/slider-2.jfif" alt="">
+                            <p class="text-heading">Слайд 2</p>
+                        </li>
+                        <li class="splide__slide">
+                            <img src="./images/slider-3.jfif" alt="">
+                            <p class="text-heading">Слайд 3</p>
+                        </li>
+                    </ul>
                 </div>
-                <div class="slider-arrows"></div>
-            </section>
-            <section class="faq">
-                <h1>faq</h1>
-                <div class="accordion">
-                    <div class="accordion-item accordion-item_show">
-                        <div class="accordion-header">Как добраться до музея?</div>
-                        <div class="accordion-body"> В Национальный музей Республики Татарстан можно добраться общественным транспортом: 
-                            1)«Станция метро «Кремлевская», а затем по направлению к Кремлю пройдя 5 минут пешком;
+                <div class="splide__arrows"></div>
+              </section>
+            <div class="wrapper">
+                <section class="faq">
+                    <p class="text-heading">faq</p>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">Как добраться до музея?</div>
+                            <div class="accordion-body"> В Национальный музей Республики Татарстан можно добраться общественным транспортом: 
+                                1)«Станция метро «Кремлевская», а затем по направлению к Кремлю пройдя 5 минут пешком;
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">Есть ли поблизости удобная парковка?</div>
+                            <div class="accordion-body"> В Национальный музей Республики Татарстан можно добраться общественным транспортом: 
+                                1)«Станция метро «Кремлевская», а затем по направлению к Кремлю пройдя 5 минут пешком;
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">Можно ли воспользоваться аудиогидом?</div>
+                            <div class="accordion-body"> В Национальный музей Республики Татарстан можно добраться общественным транспортом: 
+                                1)«Станция метро «Кремлевская», а затем по направлению к Кремлю пройдя 5 минут пешком;
+                            </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">Как добраться до музея?</div>
-                        <div class="accordion-body"> В Национальный музей Республики Татарстан можно добраться общественным транспортом: 
-                            1)«Станция метро «Кремлевская», а затем по направлению к Кремлю пройдя 5 минут пешком;
+                </section>
+                <section class="news">
+                    <p class="text-heading">Новости</p>
+                    <div class="news-list">
+                        <div class="news-item">
+                            <img class="news-item__image" src="./images/news-1.jfif">
+                            <p class="news-item__head">Заголовок</p>
+                            <p class="news-item__text">ОписаниОписание Описание Описание Описание Описание Описаниее</p>
+                        </div>
+                        <div class="news-item">
+                            <img class="news-item__image" src="./images/news-2.jfif">
+                            <p class="news-item__head">Заголовок<p>
+                            <p class="news-item__text">ОписаниОписание Описание Описание Описание Описание Описаниее</p>
+                        </div>
+                        <div class="news-item">
+                            <img class="news-item__image" src="./images/news-3.jfif">
+                            <p class="news-item__head">Заголовок<p>
+                            <p class="news-item__text">ОписаниОписание Описание Описание Описание Описание Описаниее</p>
+                        </div>
+                        <div class="news-item">
+                            <img class="news-item__image" src="./images/news-4.jfif">
+                            <p class="news-item__head">Заголовок</p>
+                            <p class="news-item__text">ОписаниОписание Описание Описание Описание Описание Описаниее</p>
+                        </div>
+                        <div class="news-item">
+                            <img class="news-item__image" src="./images/news-5.jfif">
+                            <p class="news-item__head">Заголовок</p>
+                            <p class="news-item__text">ОписаниОписание Описание Описание Описание Описание Описаниее</p>
+                        </div>
+                        <div class="news-item">
+                            <img class="news-item__image" src="./images/news-6.jfif">
+                            <p class="news-item__head">Заголовок</p>
+                            <p class="news-item__text">ОписаниОписание Описание Описание Описание Описание Описаниее</p>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">Как добраться до музея?</div>
-                        <div class="accordion-body"> В Национальный музей Республики Татарстан можно добраться общественным транспортом: 
-                            1)«Станция метро «Кремлевская», а затем по направлению к Кремлю пройдя 5 минут пешком;
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="news">
-                <div class="news-item">
-                    <img class="news-item__image">
-                    <h5 class="news-item__head">Заголовок</h5>
-                    <p class="news-item__text">ОписаниОписание Описание Описание Описание Описание Описаниее</p>
-                </div>
-                <div class="news-item">
-                    <img class="news-item__image">
-                    <h5 class="news-item__head">Заголовок</h5>
-                    <p class="news-item__text">ОписаниОписание Описание Описание Описание Описание Описаниее</p>
-                </div>
-                <div class="news-item">
-                    <img class="news-item__image">
-                    <h5 class="news-item__head">Заголовок</h5>
-                    <p class="news-item__text">ОписаниОписание Описание Описание Описание Описание Описаниее</p>
-                </div>
-                <div class="news-item">
-                    <img class="news-item__image">
-                    <h5 class="news-item__head">Заголовок</h5>
-                    <p class="news-item__text">ОписаниОписание Описание Описание Описание Описание Описаниее</p>
-                </div>
-                <div class="news-item">
-                    <img class="news-item__image">
-                    <h5 class="news-item__head">Заголовок</h5>
-                    <p class="news-item__text">ОписаниОписание Описание Описание Описание Описание Описаниее</p>
-                </div>
-                <div class="news-item">
-                    <img class="news-item__image">
-                    <h5 class="news-item__head">Заголовок</h5>
-                    <p class="news-item__text">ОписаниОписание Описание Описание Описание Описание Описаниее</p>
-                </div>
-            </section>
-            <section class="subscription">
-                <h1 class="subscription__head">Подпишись</h1>
-                <p class="subscription__text">Отправляем анонсы новых статей, выпусков и трансляций</p>
-                <form class="subscription-form">
-                    <input class="subscription-form__input">
-                    <input class="subscription-form__input">
-                    <input class="subscription-form__input">
-                    <input class="subscription-form__input">
-                    <button class="subscription-form__button">Подписаться</button>
-                </form>
-            </section>
-        </main>
-        <footer>
-            <div class="footer-description">
-                <p class="footer-description__text">Заголовок</p>
-                <p class="footer-description__text">Описание Описание Описание Описание Описание Описание Описание</p>
+                </section>
+                <section class="subscription">
+                    <h1 class="subscription__head">Подпишись</h1>
+                    <p class="subscription__text">Отправляем анонсы новых статей, выпусков и трансляций</p>
+                    <form class="subscription-form">
+                        <input class="subscription-form__input">
+                        <input class="subscription-form__input">
+                        <input class="subscription-form__input">
+                        <input class="subscription-form__input">
+                        <button class="subscription-form__button">Подписаться</button>
+                    </form>
+                </section>
             </div>
-            <ul class="social-block">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <a class="brand-link" href="#"></a>
-        </footer>
+        </main>
+        <div class="wrapper">
+            <footer>
+                <div class="footer-description">
+                    <p class="footer-description__text">Заголовок</p>
+                    <p class="footer-description__text">Описание Описание Описание Описание Описание Описание Описание</p>
+                </div>
+                <ul class="social-block">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <a class="brand-link" href="#"></a>
+            </footer>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+        <script src="index.js"></script>
     </body>
 </html>
