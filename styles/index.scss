@@ -5,11 +5,17 @@ $accent-color: rgba(118, 255, 106, 1);
 $background-color: rgba(11, 10, 13, 1);
 
 $breakpoints: (
-    "mobile": 320px,
+    "xs": 600px,
     "small": 768px,
     "medium": 992px,
     "large": 1280px,
 );
+
+@mixin respond-to($breakpoint) {
+    @media(max-width: map-get($breakpoints, $breakpoint)) {
+        @content
+    }
+}
 
 * {
     margin: 0;
@@ -58,13 +64,32 @@ ul {
 
 .wrapper {
     padding: 0 6.25rem;
+
+    @include respond-to("small") {
+        padding: 0 1rem;
+    }
+
+    @include respond-to("xs") {
+        padding: 0 0.625rem;
+    }
+}
+
+.show {
+    display: block!important;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
-    width: 50vw;
-    gap: 1rem;
+    gap: 10rem;
+    padding: 4.6875rem 0;
+
+    @include respond-to("medium") {
+        gap: 3rem;
+    }
+
+    @include respond-to("small") {
+        justify-content: space-between;
+    }
 }
 
 .header-wrap {
@@ -75,23 +100,57 @@ header {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
-    padding: 4.6875rem 0;
+
+    @include respond-to("xs") {
+        display: none;
+    }
+}
+
+.aside {
+    display: flex;
+    position: absolute;
+    height: 100vh;
+    flex-direction: column;
+    background-color: $background-color;
+    right: 0;
+    top:100%;
+    z-index: 5;
+    gap: 2.5rem;
+    width: 80vw;
+    padding-left: 3.125rem; 
+}
+
+.navbar-aside-icon {
+    display: none;
+    background: none;
+    border: none;
+
+    @include respond-to("xs") {
+        display: block;
+        float: right;
+        cursor: pointer;
+    }
 }
 
 .navbar-item {
-    p:hover {
-        color: $accent-color;
-        cursor: pointer;
-    }
+    button {
+        background-color: transparent;
+        border: none;
+        color: $primary-color;
+        font-family: 'M PLUS 1p', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        border-bottom: 2px solid transparent;
 
-    &:hover .navbar-item-submenu,
-    &:focus .navbar-item-submenu,
-    &:active .navbar-item-submenu {
-        display: block;
-    }
+        &:hover {
+            color: $accent-color;
+            cursor: pointer;
+        }
 
-    p:active {
-        border-bottom: 1px solid $primary-color;
+        &:active, &:focus {
+            border-bottom: 2px solid $primary-color;
+        }
     }
 }
 
@@ -104,8 +163,14 @@ header {
     left: 0;
     top: 100%;
     padding-bottom: 5.625rem;
+    
+    @include respond-to("xs") {
+        position: inherit;
+        padding: 0;
+    }
 
     ul {
+        display: block;
         width: 60%;
         display: flex;
         flex-direction: column;
@@ -113,6 +178,13 @@ header {
         gap: 1.875rem;
         max-height: 150px;
         margin: 0 auto;
+
+        @include respond-to("xs") {
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            max-height: 1000px;
+            padding: 1.875rem 0;
+        }
     }
 }
 
@@ -149,6 +221,7 @@ header {
     margin-top: 9.375rem;
     display: flex;
     gap: 6.25rem;
+    flex-wrap: wrap;
     p {
         text-transform: uppercase;
     }

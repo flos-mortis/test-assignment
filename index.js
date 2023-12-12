@@ -31,3 +31,25 @@ accordionHeads.forEach(header => {
         }
     });
 });
+
+const navElements = document.querySelectorAll(".navbar-item-head");
+
+navElements.forEach(item => { 
+    item.addEventListener("click", () => {
+        if (item.nextElementSibling.classList.contains("show")) {
+            item.nextElementSibling.classList.remove("show");
+        }
+        else {
+            const elemsActive = document.querySelectorAll(".show");
+            elemsActive.forEach(itemActive => itemActive.classList.remove("show"));
+            item.nextElementSibling.classList.add("show");
+            item.focus();
+        }
+    });
+});
+
+function openAsideMenu() {
+    const menu = document.querySelector(".navbar");
+    if (menu.classList.contains("aside")) menu.classList.remove("aside")
+    else menu.classList.add("aside");
+}
