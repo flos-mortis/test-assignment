@@ -92,6 +92,7 @@ header {
     }
 
     @include respond-to("small") {
+        padding: 2.1875rem 0;
         justify-content: space-between;
     }
 }
@@ -100,7 +101,7 @@ header {
     position: fixed;
     background-color: $background-color;
     width: 100vw;
-    z-index: 99;
+    z-index: 2;
     top: 0;
 }
 
@@ -123,13 +124,61 @@ header {
     right: 0;
     top: 150px;
     height: calc(100vh - 150px);
-    z-index: 5;
+    z-index: 3;
     gap: 2.5rem;
     width: 80vw;
     padding-left: 3.125rem; 
 }
 
 .navbar-aside-icon {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.navbar-aside-icon__input {
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    width: 45px;
+    height: 45px;
+
+    &:checked ~ span:nth-child(2) {
+        transform: translateY(6.5px) rotate(45deg) scaleX(1.2);
+    }
+
+    &:checked ~ span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg) scaleX(1.2);
+    }
+
+    &:checked ~ span:nth-child(4) {
+        opacity: 0;
+        transform: scale(0.2, 0.2);
+    }
+}
+
+.navbar-aside-icon__span {
+    display: flex;
+    width: 36px;
+    height: 3px;
+    background-color: $primary-color;
+    z-index: 20;
+    position: relative;
+    margin-top: 10px;
+    transition: transform .5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                opacity .5s ease;
+
+    &:last-child {
+        width: 18px;
+    }
+}
+
+/* .navbar-aside-icon {
     display: none;
     background: none;
     border: none;
@@ -140,7 +189,7 @@ header {
         cursor: pointer;
     }
 }
-
+ */
 .navbar-item {
     button {
         background-color: transparent;
@@ -199,6 +248,10 @@ header {
 
 main {
     margin-top: 200px;
+
+    @include respond-to("xs") {
+        margin-top: 180px;
+    }
 }
 
 .splide__track{
