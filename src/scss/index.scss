@@ -115,6 +115,18 @@ header {
     }
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 3;
+    overflow: hidden;
+}
+
 .aside {
     display: flex;
     justify-content:flex-start;
@@ -122,31 +134,38 @@ header {
     flex-direction: column;
     background-color: $background-color;
     right: 0;
-    top: 150px;
-    height: calc(100vh - 150px);
-    z-index: 3;
+    height: 100vh;
+    z-index: 4;
     gap: 2.5rem;
     width: 80vw;
     padding-left: 3.125rem; 
+    padding-top: 7.5rem;
+    padding-bottom: 3rem;
+    overflow-y: scroll;
 }
 
 .navbar-aside-icon {
-    display: flex;
+    display: none;
     align-items: flex-end;
     flex-direction: column;
     position: relative;
-    z-index: 2;
     -webkit-user-select: none;
     user-select: none;
+
+    @include respond-to("xs") {
+        display: flex;
+    }
 }
 
 .navbar-aside-icon__input {
     display: flex;
     position: absolute;
     cursor: pointer;
+    right: 0;
     opacity: 0;
     width: 45px;
     height: 45px;
+    z-index: 100;
 
     &:checked ~ span:nth-child(2) {
         transform: translateY(6.5px) rotate(45deg) scaleX(1.2);
@@ -167,29 +186,17 @@ header {
     width: 36px;
     height: 3px;
     background-color: $primary-color;
-    z-index: 20;
+    z-index: 5;
     position: relative;
     margin-top: 10px;
     transition: transform .5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
                 opacity .5s ease;
 
-    &:last-child {
+    &:nth-child(4) {
         width: 18px;
     }
 }
 
-/* .navbar-aside-icon {
-    display: none;
-    background: none;
-    border: none;
-
-    @include respond-to("xs") {
-        display: block;
-        float: right;
-        cursor: pointer;
-    }
-}
- */
 .navbar-item {
     button {
         background-color: transparent;

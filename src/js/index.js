@@ -4,7 +4,7 @@ let splide = new Splide( '.splide', {
     gap       : '1.25rem',
     pagination: false,
     start     : 1,
-    drag      : false,
+    drag      : true,
     autoplay  : true,
     interval  : 3000,
     classes: {
@@ -50,11 +50,23 @@ navElements.forEach(item => {
 });
 
 //открытие меню сбоку
-function openAsideMenu() {
-    const menu = document.querySelector(".navbar");
-    menu.classList.contains("aside") ? menu.classList.remove("aside") : menu.classList.add("aside");
-};
+const toggleMenu = document.querySelector(".navbar-aside-icon__input")
+const overlay = document.querySelector(".overlay")
+const menu = document.querySelector(".navbar");
+const page = document.querySelector("body");
 
+toggleMenu.addEventListener("change", () => {
+    if (toggleMenu.checked) {
+        overlay.style.display = "block";
+        menu.classList.add("aside");
+        page.style.overflow = "hidden";
+    }
+    else {
+        overlay.style.display = "none";
+        menu.classList.remove("aside");
+        page.style.overflow = "auto";
+    }
+})
 
 //маска для ввода номера телефона
 document.addEventListener("DOMContentLoaded", () => {
