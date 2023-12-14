@@ -380,13 +380,6 @@ main {
     padding-top: 6.25rem;
     padding-bottom: 6.25rem;
 }
-@media (min-width: 320px) {
-    /* Adjust the breakpoint as needed for your design */
-    #news-slider {
-       display: block; /* Show as a block on desktop */
-    }
- }
-
 .news-list {
     display: flex;
     flex-wrap: wrap;
