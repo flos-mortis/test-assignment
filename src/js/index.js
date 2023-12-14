@@ -7,15 +7,19 @@ let splide = new Splide( '.splide', {
     drag      : true,
     autoplay  : true,
     interval  : 3000,
-    classes: {
-		arrows: 'splide__arrows custom-arrows',
-		arrow : 'splide__arrow custom-arrow',
-		prev  : 'splide__arrow--prev custom-arrow-prev',
-		next  : 'splide__arrow--next custom-arrow-next',
-  },
-  } );
+    arrows    : false,
+  } ).mount();
 
-splide.mount();
+const prevBtn = document.querySelector(".splide-custom__arrow--prev");
+const nextBtn = document.querySelector(".splide-custom__arrow--next");
+
+prevBtn.addEventListener("click", e => {
+    splide.go("-1")
+})
+
+nextBtn.addEventListener("click", e => {
+    splide.go("+1")
+})
 
 //аккордеон
 const accordionHeads = document.querySelectorAll(".accordion-header");

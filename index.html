@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="src/scss/index.css"/>
     </head>
     <body>
+        <div class="overlay"></div>
         <div class="wrapper header-wrap">
             <header>
                 <img class="navbar-logo__image" src="src/images/logo.svg" alt="500na700">
@@ -79,7 +80,6 @@
                         <span class="navbar-aside-icon__span"></span>
                         <span class="navbar-aside-icon__span"></span>
                         <span class="navbar-aside-icon__span"></span>
-                <div class="overlay"></div>
                 </div>
             </header>
         </div>
@@ -101,7 +101,18 @@
                         </li>
                     </ul>
                 </div>
-                <div class="splide__arrows"></div>
+                <div class="splide-custom__arrows">
+                    <button class="splide-custom__arrow--prev splide-custom__arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="118" height="40" viewBox="0 0 118 40" fill="none">
+                            <path d="M0.939339 18.9393C0.353554 19.5251 0.353554 20.4749 0.939339 21.0607L10.4853 30.6066C11.0711 31.1924 12.0208 31.1924 12.6066 30.6066C13.1924 30.0208 13.1924 29.0711 12.6066 28.4853L4.12132 20L12.6066 11.5147C13.1924 10.9289 13.1924 9.97918 12.6066 9.39339C12.0208 8.8076 11.0711 8.8076 10.4853 9.39339L0.939339 18.9393ZM102 18.5L2 18.5L2 21.5L102 21.5L102 18.5Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <button class="splide-custom__arrow--next splide-custom__arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="118" height="40" viewBox="0 0 118 40" fill="none">
+                            <path d="M0.939339 18.9393C0.353554 19.5251 0.353554 20.4749 0.939339 21.0607L10.4853 30.6066C11.0711 31.1924 12.0208 31.1924 12.6066 30.6066C13.1924 30.0208 13.1924 29.0711 12.6066 28.4853L4.12132 20L12.6066 11.5147C13.1924 10.9289 13.1924 9.97918 12.6066 9.39339C12.0208 8.8076 11.0711 8.8076 10.4853 9.39339L0.939339 18.9393ZM102 18.5L2 18.5L2 21.5L102 21.5L102 18.5Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
             </section>
             <div class="wrapper">
                 <section class="faq">
