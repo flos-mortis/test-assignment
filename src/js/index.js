@@ -1,4 +1,4 @@
-let splide = new Splide( '.splide', {
+let imageSplide = new Splide( '#image-carousel', {
     type      : 'loop',
     padding   : '6rem',
     gap       : '1.25rem',
@@ -14,11 +14,11 @@ const prevBtn = document.querySelector(".splide-custom__arrow--prev");
 const nextBtn = document.querySelector(".splide-custom__arrow--next");
 
 prevBtn.addEventListener("click", e => {
-    splide.go("-1")
+    imageSplide.go("-1")
 })
 
 nextBtn.addEventListener("click", e => {
-    splide.go("+1")
+    imageSplide.go("+1")
 })
 
 //аккордеон

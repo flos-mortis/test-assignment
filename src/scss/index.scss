@@ -88,11 +88,15 @@ header {
     padding: 4.6875rem 0;
 
     @include respond-to("medium") {
-        gap: 3rem;
+        gap: 2rem;
     }
 
     @include respond-to("small") {
         padding: 2.1875rem 0;
+        justify-content: space-around;
+    }
+
+    @include respond-to("xs") {
         justify-content: space-between;
     }
 }
@@ -376,6 +380,12 @@ main {
     padding-top: 6.25rem;
     padding-bottom: 6.25rem;
 }
+@media (min-width: 320px) {
+    /* Adjust the breakpoint as needed for your design */
+    #news-slider {
+       display: block; /* Show as a block on desktop */
+    }
+ }
 
 .news-list {
     display: flex;
